@@ -1,0 +1,6 @@
+/.bundle/
+/vendor/bundle/
+
+# for tracker
+/_tracker/repos.json
+/_tracker/working/
