@@ -3,11 +3,29 @@
 require 'bundler/setup'
 require 'colorize'
 require 'json'
+require 'optparse'
 
 file = File.read('repos.json')
 wd = 'working'
 
 hash = JSON.parse(file)
+
+options = {}
+OptionParser.new do |opts|
+  opts.banner = "usage: sync.rb [options]"
+  opts.on("-n", "--new", "Newly added repository only") do |v|
+    options[:new] = v
+  end
+  opts.on("-h", "--help", "Prints this help") do
+    puts opts
+    exit
+  end
+end.parse!
+
+if options[:new] == true
+  puts "running in new repository only mode..."
+end
+
 
 unless File.exist?("#{wd}")
   Dir.mkdir "#{wd}"
@@ -17,6 +35,11 @@ for e in hash
   origin = e['origin']
   forked = e['forked']
   proj = File.basename(forked).sub('.git','')
+
+  if options[:new] == true and File.exist?("#{wd}/#{proj}")
+    next
+  end
+
   puts ""
   puts ">>> processing #{proj} (#{forked})...".blue
   if origin == ""
