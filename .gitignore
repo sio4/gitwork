@@ -4,3 +4,8 @@
 # for tracker
 /_tracker/repos.json
 /_tracker/working/
+
+# separated repositories
+/_misc/
+/_pages/
+
