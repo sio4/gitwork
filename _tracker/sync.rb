@@ -34,7 +34,7 @@ end
 for e in hash
   origin = e['origin']
   forked = e['forked']
-  proj = File.basename(forked).sub('.git','')
+  proj = File.basename(forked).sub(/\.git$/,'')
 
   if options[:new] == true and File.exist?("#{wd}/#{proj}")
     next
