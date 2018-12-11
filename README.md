@@ -2,6 +2,17 @@
 
 My personal workspace for git, github and more.
 
+## Commands
+
+```console
+$ rvm use default
+Using /home/sio4/.rvm/gems/ruby-2.4.1
+$ 
+$ bundle
+<...>
+$ 
+```
+
 ## Tools
 
 ### Tracker (`_tracker/tracker.rb`)
