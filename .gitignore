@@ -1,4 +1,3 @@
-/.bundle/
 /vendor/bundle/
 
 # for tracker
@@ -9,3 +8,7 @@
 /_misc/
 /_pages/
 
+
+/sauru.so/
+/sio4/
+/hyeoncheon/
